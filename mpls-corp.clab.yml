@@ -1,0 +1,24 @@
+name: mpls-corp
+topology:
+  nodes:
+    pe1: # Provider Edge 1 (Router que conecta al cliente)
+      kind: linux
+      image: frrouting/frr:latest
+    p:   # Provider Core (Router del núcleo del ISP)
+      kind: linux
+      image: frrouting/frr:latest
+    pe2: # Provider Edge 2
+      kind: linux
+      image: frrouting/frr:latest
+    ce1: # Customer Edge 1 (Sucursal A del Cliente)
+      kind: linux
+      image: alpine:latest
+    ce2: # Customer Edge 2 (Sucursal B del Cliente)
+      kind: linux
+      image: alpine:latest
+
+  links:
+    - endpoints: ["ce1:eth1", "pe1:eth1"]
+    - endpoints: ["pe1:eth2", "p:eth1"]
+    - endpoints: ["p:eth2", "pe2:eth1"]
+    - endpoints: ["pe2:eth2", "ce2:eth1"]

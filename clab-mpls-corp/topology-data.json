@@ -1,0 +1,255 @@
+{
+  "name": "mpls-corp",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "clab",
+        "bridge": "br-56c4d7809022",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "ipv6-subnet": "3fff:172:20:20::/64",
+        "ipv6-gw": "3fff:172:20:20::1",
+        "external-access": true,
+        "ipam": {
+          "provider": "containerlab"
+        }
+      }
+    }
+  },
+  "ssh-pub-keys": ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDAb902fG5a1L0jzP/73Tde3oUi6FpAY1ybbPOtrQ5i4DPznPi72I1JJvMwsK/+STR/PWVXnnmV63h9mKOd/FzZJEyerqM+H4LHc7Vk8UJJjiBIv/qqsvS0RExvi6cXJF84gV+Z14jLum48fRpZmp+N846OclB5Up9Oa3K9kIt9TJBNLaecgctHDjzdVxigazpB47AD3UCdk+DeVpUrzGP9jtaWaO1Pne9cch9McBcgOgL8nJ/GaEUmYbhXr0qKNtIO8MeiabsbFoIdmSmVwAS+DYbwRSWM1yR1vnVHniuSmn55crcU9m5yQ2cwBRVcHG6/TOTXmQiPBJqDMmXi4WI7mJnpRrT+yPz635Wj7MGePUL4jBnfWUV4amW90VbpTMUHlhcGkJNk5Sqc2gX44ZUnyedQLpaq8JCRFdVMz7MKLjkXVAzZHkyHDmJFb6ELok72Jyq3b4gqEJH86RCxlJ/sivu89Q2deTAhfcOOXIQiDV0+tClfzepqhkXg2R5VEAKmVliRJl+um5FOjqgF6q5HMLw5piabflnLhJSiTGtVYhNc1SNdyTnF0yT2lM0nfdF+axEPZmUq00nRxiY99yWA+KjKAr/0CxEopTB8Mrv73l/fjSfiKOBPMUiOzU7QBncXVXTZIod0dCyu/6jPtUY0HCxOu/DyLPAesz5CKxWDkQ=="],
+  "nodes": {
+    "ce1": {
+      "index": "0",
+      "shortname": "ce1",
+      "longname": "clab-mpls-corp-ce1",
+      "fqdn": "ce1.mpls-corp.io",
+      "group": "",
+      "labdir": "/Users/oliverolvera/Documents/GitHub - Personal/L3VPN-over-MPLS/clab-mpls-corp/ce1",
+      "kind": "linux",
+      "image": "alpine:latest",
+      "mgmt-net": "clab",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.2",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::2",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-git-branch": "main",
+        "clab-git-hash": "f75fc80",
+        "clab-mgmt-net-bridge": "br-56c4d7809022",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/Users/oliverolvera/Documents/GitHub - Personal/L3VPN-over-MPLS/clab-mpls-corp/ce1",
+        "clab-node-longname": "clab-mpls-corp-ce1",
+        "clab-node-name": "ce1",
+        "clab-node-type": "",
+        "clab-owner": "oliverolvera",
+        "clab-topo-file": "/Users/oliverolvera/Documents/GitHub - Personal/L3VPN-over-MPLS/mpls-corp.clab.yml",
+        "containerlab": "mpls-corp"
+      },
+      "port-bindings": [
+      ]
+    },
+    "ce2": {
+      "index": "1",
+      "shortname": "ce2",
+      "longname": "clab-mpls-corp-ce2",
+      "fqdn": "ce2.mpls-corp.io",
+      "group": "",
+      "labdir": "/Users/oliverolvera/Documents/GitHub - Personal/L3VPN-over-MPLS/clab-mpls-corp/ce2",
+      "kind": "linux",
+      "image": "alpine:latest",
+      "mgmt-net": "clab",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.3",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::3",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-git-branch": "main",
+        "clab-git-hash": "f75fc80",
+        "clab-mgmt-net-bridge": "br-56c4d7809022",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/Users/oliverolvera/Documents/GitHub - Personal/L3VPN-over-MPLS/clab-mpls-corp/ce2",
+        "clab-node-longname": "clab-mpls-corp-ce2",
+        "clab-node-name": "ce2",
+        "clab-node-type": "",
+        "clab-owner": "oliverolvera",
+        "clab-topo-file": "/Users/oliverolvera/Documents/GitHub - Personal/L3VPN-over-MPLS/mpls-corp.clab.yml",
+        "containerlab": "mpls-corp"
+      },
+      "port-bindings": [
+      ]
+    },
+    "p": {
+      "index": "2",
+      "shortname": "p",
+      "longname": "clab-mpls-corp-p",
+      "fqdn": "p.mpls-corp.io",
+      "group": "",
+      "labdir": "/Users/oliverolvera/Documents/GitHub - Personal/L3VPN-over-MPLS/clab-mpls-corp/p",
+      "kind": "linux",
+      "image": "frrouting/frr:latest",
+      "mgmt-net": "clab",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.4",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::4",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-git-branch": "main",
+        "clab-git-hash": "f75fc80",
+        "clab-mgmt-net-bridge": "br-56c4d7809022",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/Users/oliverolvera/Documents/GitHub - Personal/L3VPN-over-MPLS/clab-mpls-corp/p",
+        "clab-node-longname": "clab-mpls-corp-p",
+        "clab-node-name": "p",
+        "clab-node-type": "",
+        "clab-owner": "oliverolvera",
+        "clab-topo-file": "/Users/oliverolvera/Documents/GitHub - Personal/L3VPN-over-MPLS/mpls-corp.clab.yml",
+        "containerlab": "mpls-corp"
+      },
+      "port-bindings": [
+      ]
+    },
+    "pe1": {
+      "index": "3",
+      "shortname": "pe1",
+      "longname": "clab-mpls-corp-pe1",
+      "fqdn": "pe1.mpls-corp.io",
+      "group": "",
+      "labdir": "/Users/oliverolvera/Documents/GitHub - Personal/L3VPN-over-MPLS/clab-mpls-corp/pe1",
+      "kind": "linux",
+      "image": "frrouting/frr:latest",
+      "mgmt-net": "clab",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.5",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::5",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-git-branch": "main",
+        "clab-git-hash": "f75fc80",
+        "clab-mgmt-net-bridge": "br-56c4d7809022",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/Users/oliverolvera/Documents/GitHub - Personal/L3VPN-over-MPLS/clab-mpls-corp/pe1",
+        "clab-node-longname": "clab-mpls-corp-pe1",
+        "clab-node-name": "pe1",
+        "clab-node-type": "",
+        "clab-owner": "oliverolvera",
+        "clab-topo-file": "/Users/oliverolvera/Documents/GitHub - Personal/L3VPN-over-MPLS/mpls-corp.clab.yml",
+        "containerlab": "mpls-corp"
+      },
+      "port-bindings": [
+      ]
+    },
+    "pe2": {
+      "index": "4",
+      "shortname": "pe2",
+      "longname": "clab-mpls-corp-pe2",
+      "fqdn": "pe2.mpls-corp.io",
+      "group": "",
+      "labdir": "/Users/oliverolvera/Documents/GitHub - Personal/L3VPN-over-MPLS/clab-mpls-corp/pe2",
+      "kind": "linux",
+      "image": "frrouting/frr:latest",
+      "mgmt-net": "clab",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.6",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::6",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-git-branch": "main",
+        "clab-git-hash": "f75fc80",
+        "clab-mgmt-net-bridge": "br-56c4d7809022",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/Users/oliverolvera/Documents/GitHub - Personal/L3VPN-over-MPLS/clab-mpls-corp/pe2",
+        "clab-node-longname": "clab-mpls-corp-pe2",
+        "clab-node-name": "pe2",
+        "clab-node-type": "",
+        "clab-owner": "oliverolvera",
+        "clab-topo-file": "/Users/oliverolvera/Documents/GitHub - Personal/L3VPN-over-MPLS/mpls-corp.clab.yml",
+        "containerlab": "mpls-corp"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "endpoints": {
+        "a": {
+          "node": "ce1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:2f:3f:19",
+          "peer": "z"
+        },
+        "z": {
+          "node": "pe1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:6e:2a:28",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "pe1",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:0b:99:4e",
+          "peer": "z"
+        },
+        "z": {
+          "node": "p",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:fd:91:03",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "p",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:f6:58:76",
+          "peer": "z"
+        },
+        "z": {
+          "node": "pe2",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:76:7e:08",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "pe2",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:11:71:bb",
+          "peer": "z"
+        },
+        "z": {
+          "node": "ce2",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:b3:d2:b4",
+          "peer": "a"
+        }
+      }
+    }
+  ]
+}
