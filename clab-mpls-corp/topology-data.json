@@ -6,7 +6,7 @@
       "prefix": "clab",
       "mgmt": {
         "network": "clab",
-        "bridge": "br-56c4d7809022",
+        "bridge": "br-62c4765fbea8",
         "ipv4-subnet": "172.20.20.0/24",
         "ipv4-gw": "172.20.20.1",
         "ipv6-subnet": "3fff:172:20:20::/64",
@@ -38,8 +38,8 @@
       "mac-address": "",
       "labels": {
         "clab-git-branch": "main",
-        "clab-git-hash": "c312c15",
-        "clab-mgmt-net-bridge": "br-56c4d7809022",
+        "clab-git-hash": "2434ebe",
+        "clab-mgmt-net-bridge": "br-62c4765fbea8",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/Users/oliverolvera/Documents/GitHub - Personal/L3VPN-over-MPLS/clab-mpls-corp/ce1",
@@ -71,8 +71,8 @@
       "mac-address": "",
       "labels": {
         "clab-git-branch": "main",
-        "clab-git-hash": "c312c15",
-        "clab-mgmt-net-bridge": "br-56c4d7809022",
+        "clab-git-hash": "2434ebe",
+        "clab-mgmt-net-bridge": "br-62c4765fbea8",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/Users/oliverolvera/Documents/GitHub - Personal/L3VPN-over-MPLS/clab-mpls-corp/ce2",
@@ -104,8 +104,8 @@
       "mac-address": "",
       "labels": {
         "clab-git-branch": "main",
-        "clab-git-hash": "c312c15",
-        "clab-mgmt-net-bridge": "br-56c4d7809022",
+        "clab-git-hash": "2434ebe",
+        "clab-mgmt-net-bridge": "br-62c4765fbea8",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/Users/oliverolvera/Documents/GitHub - Personal/L3VPN-over-MPLS/clab-mpls-corp/p",
@@ -137,8 +137,8 @@
       "mac-address": "",
       "labels": {
         "clab-git-branch": "main",
-        "clab-git-hash": "c312c15",
-        "clab-mgmt-net-bridge": "br-56c4d7809022",
+        "clab-git-hash": "2434ebe",
+        "clab-mgmt-net-bridge": "br-62c4765fbea8",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/Users/oliverolvera/Documents/GitHub - Personal/L3VPN-over-MPLS/clab-mpls-corp/pe1",
@@ -170,8 +170,8 @@
       "mac-address": "",
       "labels": {
         "clab-git-branch": "main",
-        "clab-git-hash": "c312c15",
-        "clab-mgmt-net-bridge": "br-56c4d7809022",
+        "clab-git-hash": "2434ebe",
+        "clab-mgmt-net-bridge": "br-62c4765fbea8",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/Users/oliverolvera/Documents/GitHub - Personal/L3VPN-over-MPLS/clab-mpls-corp/pe2",
@@ -192,13 +192,13 @@
         "a": {
           "node": "ce1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:28:cf:bb",
+          "mac": "aa:c1:ab:da:d2:c9",
           "peer": "z"
         },
         "z": {
           "node": "pe1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:6c:32:2f",
+          "mac": "aa:c1:ab:c3:2a:bc",
           "peer": "a"
         }
       }
@@ -208,13 +208,13 @@
         "a": {
           "node": "pe1",
           "interface": "eth2",
-          "mac": "aa:c1:ab:21:35:8d",
+          "mac": "aa:c1:ab:d3:70:02",
           "peer": "z"
         },
         "z": {
           "node": "p",
           "interface": "eth1",
-          "mac": "aa:c1:ab:a6:58:1d",
+          "mac": "aa:c1:ab:0b:35:90",
           "peer": "a"
         }
       }
@@ -224,13 +224,13 @@
         "a": {
           "node": "p",
           "interface": "eth2",
-          "mac": "aa:c1:ab:5c:70:8a",
+          "mac": "aa:c1:ab:93:c4:a5",
           "peer": "z"
         },
         "z": {
           "node": "pe2",
           "interface": "eth1",
-          "mac": "aa:c1:ab:80:a1:27",
+          "mac": "aa:c1:ab:e8:24:53",
           "peer": "a"
         }
       }
@@ -240,13 +240,13 @@
         "a": {
           "node": "pe2",
           "interface": "eth2",
-          "mac": "aa:c1:ab:34:84:c4",
+          "mac": "aa:c1:ab:6f:05:af",
           "peer": "z"
         },
         "z": {
           "node": "ce2",
           "interface": "eth1",
-          "mac": "aa:c1:ab:99:77:38",
+          "mac": "aa:c1:ab:ee:0b:05",
           "peer": "a"
         }
       }

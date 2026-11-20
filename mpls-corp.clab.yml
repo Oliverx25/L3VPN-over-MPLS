@@ -11,7 +11,12 @@ topology:
         net.ipv4.ip_forward: "1"
         net.mpls.platform_labels: "1048575"
       exec:
+        - sysctl -w net.mpls.conf.lo.input=1
         - sysctl -w net.mpls.conf.eth2.input=1
+        - sh -ec 'ip link show dev CUST >/dev/null 2>&1 || ip link add CUST type vrf table 100'
+        - ip link set dev CUST up
+        - ip link set dev eth1 master CUST
+        - ip address replace 192.168.1.0/31 dev eth1
     p:   # Provider Core (Router del núcleo del ISP)
       kind: linux
       image: frrouting/frr:latest
@@ -34,13 +39,26 @@ topology:
         net.ipv4.ip_forward: "1"
         net.mpls.platform_labels: "1048575"
       exec:
+        - sysctl -w net.mpls.conf.lo.input=1
         - sysctl -w net.mpls.conf.eth1.input=1
+        - sh -ec 'ip link show dev CUST >/dev/null 2>&1 || ip link add CUST type vrf table 100'
+        - ip link set dev CUST up
+        - ip link set dev eth2 master CUST
+        - ip address replace 192.168.2.0/31 dev eth2
     ce1: # Customer Edge 1 (Sucursal A del Cliente)
       kind: linux
       image: alpine:latest
+      exec:
+        - ip address add 192.168.1.1/31 dev eth1
+        - ip address add 10.10.10.1/24 dev lo
+        - ip route replace 10.20.20.0/24 via 192.168.1.0 dev eth1
     ce2: # Customer Edge 2 (Sucursal B del Cliente)
       kind: linux
       image: alpine:latest
+      exec:
+        - ip address add 192.168.2.1/31 dev eth1
+        - ip address add 10.20.20.1/24 dev lo
+        - ip route replace 10.10.10.0/24 via 192.168.2.0 dev eth1
 
   links:
     - endpoints: ["ce1:eth1", "pe1:eth1"]
