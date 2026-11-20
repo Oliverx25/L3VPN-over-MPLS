@@ -1,0 +1,70 @@
+{
+  "freeTextAnnotations": [],
+  "freeShapeAnnotations": [],
+  "trafficRateAnnotations": [],
+  "scriptButtonAnnotations": [],
+  "groupStyleAnnotations": [],
+  "networkNodeAnnotations": [],
+  "nodeAnnotations": [
+    {
+      "id": "pe1",
+      "position": {
+        "x": 620,
+        "y": 360
+      },
+      "geoCoordinates": {
+        "lat": 50.753947,
+        "lng": 5.954357
+      }
+    },
+    {
+      "id": "p",
+      "position": {
+        "x": 460,
+        "y": 360
+      },
+      "geoCoordinates": {
+        "lat": 47.531774,
+        "lng": 4.763686
+      }
+    },
+    {
+      "id": "pe2",
+      "position": {
+        "x": 280,
+        "y": 360
+      },
+      "geoCoordinates": {
+        "lat": 46.649312,
+        "lng": 9.085318
+      }
+    },
+    {
+      "id": "ce1",
+      "position": {
+        "x": 780,
+        "y": 360
+      },
+      "geoCoordinates": {
+        "lat": 51.951723,
+        "lng": -1.231544
+      }
+    },
+    {
+      "id": "ce2",
+      "position": {
+        "x": 120,
+        "y": 360
+      },
+      "geoCoordinates": {
+        "lat": 51.704302,
+        "lng": 10.051306
+      }
+    }
+  ],
+  "edgeAnnotations": [],
+  "aliasEndpointAnnotations": [],
+  "viewerSettings": {
+    "nodeStyle": "boxed"
+  }
+}
