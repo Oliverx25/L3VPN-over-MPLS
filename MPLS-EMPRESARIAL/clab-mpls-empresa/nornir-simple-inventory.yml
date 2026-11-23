@@ -1,0 +1,61 @@
+---
+ce-b1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.21.4
+ce-b2:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.21.10
+ce1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.21.5
+ce2:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.21.11
+p:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.21.12
+p2:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.21.13
+pc-a:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.21.6
+pc-b:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.21.2
+pe1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.21.7
+pe2:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.21.8
+srv-a:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.21.9
+srv-b:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.21.3

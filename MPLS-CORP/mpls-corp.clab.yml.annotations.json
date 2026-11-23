@@ -1,0 +1,223 @@
+{
+  "freeTextAnnotations": [],
+  "freeShapeAnnotations": [],
+  "trafficRateAnnotations": [
+    {
+      "id": "traffic-rate-ce1-eth1",
+      "position": {
+        "x": 715,
+        "y": 256
+      },
+      "label": "autocreated",
+      "nodeId": "ce1",
+      "interfaceName": "eth1",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-pe1-eth1",
+      "position": {
+        "x": 715,
+        "y": 334
+      },
+      "label": "autocreated",
+      "nodeId": "pe1",
+      "interfaceName": "eth1",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-pe1-eth2",
+      "position": {
+        "x": 624,
+        "y": 425
+      },
+      "label": "autocreated",
+      "nodeId": "pe1",
+      "interfaceName": "eth2",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-p-eth1",
+      "position": {
+        "x": 546,
+        "y": 425
+      },
+      "label": "autocreated",
+      "nodeId": "p",
+      "interfaceName": "eth1",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-p-eth2",
+      "position": {
+        "x": 364,
+        "y": 425
+      },
+      "label": "autocreated",
+      "nodeId": "p",
+      "interfaceName": "eth2",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-pe2-eth1",
+      "position": {
+        "x": 286,
+        "y": 425
+      },
+      "label": "autocreated",
+      "nodeId": "pe2",
+      "interfaceName": "eth1",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-pe2-eth2",
+      "position": {
+        "x": 195,
+        "y": 334
+      },
+      "label": "autocreated",
+      "nodeId": "pe2",
+      "interfaceName": "eth2",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-ce2-eth1",
+      "position": {
+        "x": 195,
+        "y": 256
+      },
+      "label": "autocreated",
+      "nodeId": "ce2",
+      "interfaceName": "eth1",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    }
+  ],
+  "scriptButtonAnnotations": [],
+  "groupStyleAnnotations": [],
+  "networkNodeAnnotations": [],
+  "nodeAnnotations": [
+    {
+      "id": "pe1",
+      "position": {
+        "x": 180,
+        "y": 420
+      },
+      "geoCoordinates": {
+        "lat": 50.753947,
+        "lng": 5.954357
+      }
+    },
+    {
+      "id": "p",
+      "position": {
+        "x": 460,
+        "y": 420
+      },
+      "geoCoordinates": {
+        "lat": 47.531774,
+        "lng": 4.763686
+      }
+    },
+    {
+      "id": "pe2",
+      "position": {
+        "x": 740,
+        "y": 420
+      },
+      "geoCoordinates": {
+        "lat": 46.649312,
+        "lng": 9.085318
+      }
+    },
+    {
+      "id": "ce1",
+      "position": {
+        "x": 180,
+        "y": 160
+      },
+      "geoCoordinates": {
+        "lat": 51.951723,
+        "lng": -1.231544
+      }
+    },
+    {
+      "id": "ce2",
+      "position": {
+        "x": 740,
+        "y": 160
+      },
+      "geoCoordinates": {
+        "lat": 51.704302,
+        "lng": 10.051306
+      }
+    }
+  ],
+  "edgeAnnotations": [],
+  "aliasEndpointAnnotations": [],
+  "viewerSettings": {
+    "nodeStyle": "boxed",
+    "style": "default",
+    "linkLabelMode": "show-all",
+    "lastNonTelemetryLinkLabelMode": "show-all",
+    "nodeBoxSpacing": "default",
+    "linkStyle": "straight",
+    "mgmtNetworkBadge": "hover",
+    "showNodeCpu": true,
+    "telemetryNodeSizePx": 40,
+    "telemetryInterfaceSizePercent": 100,
+    "showRateLabels": true,
+    "autoCreateTrafficRateAnnotations": true,
+    "animateTraffic": true,
+    "gridLineWidth": 0.5,
+    "gridStyle": "dotted",
+    "gridColor": null,
+    "gridBgColor": null
+  }
+}

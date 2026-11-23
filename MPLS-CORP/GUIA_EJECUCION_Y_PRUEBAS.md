@@ -63,7 +63,7 @@ printf '%s\n' mpls_router mpls_iptunnel vrf | sudo tee /etc/modules-load.d/mpls-
 Desde la terminal de Cursor, sitúate en la carpeta que contiene el YAML. En el equipo del laboratorio:
 
 ```bash
-cd "/Users/oliverolvera/Documents/GitHub - Personal/L3VPN-over-MPLS"
+cd "/Users/oliverolvera/Documents/GitHub - Personal/L3VPN-over-MPLS/MPLS-CORP"
 ls mpls-corp.clab.yml configs/{pe1,p,pe2}/{daemons,frr.conf}
 ```
 

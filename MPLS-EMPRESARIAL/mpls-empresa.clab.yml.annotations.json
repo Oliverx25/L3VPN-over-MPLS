@@ -1,0 +1,99 @@
+{
+  "freeTextAnnotations": [],
+  "freeShapeAnnotations": [],
+  "trafficRateAnnotations": [],
+  "scriptButtonAnnotations": [],
+  "groupStyleAnnotations": [],
+  "networkNodeAnnotations": [],
+  "nodeAnnotations": [
+    {
+      "id": "pe1",
+      "position": {
+        "x": 500,
+        "y": 120
+      }
+    },
+    {
+      "id": "pe2",
+      "position": {
+        "x": 500,
+        "y": 480
+      }
+    },
+    {
+      "id": "p",
+      "position": {
+        "x": 720,
+        "y": 300
+      }
+    },
+    {
+      "id": "p2",
+      "position": {
+        "x": 280,
+        "y": 300
+      }
+    },
+    {
+      "id": "ce1",
+      "position": {
+        "x": 280,
+        "y": 120
+      }
+    },
+    {
+      "id": "ce2",
+      "position": {
+        "x": 720,
+        "y": 480
+      }
+    },
+    {
+      "id": "ce-b1",
+      "position": {
+        "x": 720,
+        "y": 120
+      }
+    },
+    {
+      "id": "ce-b2",
+      "position": {
+        "x": 280,
+        "y": 480
+      }
+    },
+    {
+      "id": "pc-a",
+      "position": {
+        "x": 60,
+        "y": 120
+      }
+    },
+    {
+      "id": "srv-a",
+      "position": {
+        "x": 960,
+        "y": 480
+      }
+    },
+    {
+      "id": "pc-b",
+      "position": {
+        "x": 940,
+        "y": 120
+      }
+    },
+    {
+      "id": "srv-b",
+      "position": {
+        "x": 60,
+        "y": 480
+      }
+    }
+  ],
+  "edgeAnnotations": [],
+  "aliasEndpointAnnotations": [],
+  "viewerSettings": {
+    "nodeStyle": "boxed"
+  }
+}

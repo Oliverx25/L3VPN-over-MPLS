@@ -1,0 +1,237 @@
+name: mpls-empresa
+mgmt:
+  network: mpls-empresa-mgmt
+  ipv4-subnet: 172.20.21.0/24
+topology:
+  nodes:
+    pe1:
+      kind: linux
+      image: frrouting/frr:latest
+      entrypoint: /bin/sleep
+      cmd: infinity
+      binds:
+        - ./configs/pe1/daemons:/etc/frr/daemons
+        - ./configs/pe1/frr.conf:/etc/frr/frr.conf
+      sysctls:
+        net.ipv4.ip_forward: "1"
+        net.ipv4.conf.all.rp_filter: "0"
+        net.ipv4.conf.default.rp_filter: "0"
+        net.mpls.platform_labels: "1048575"
+      exec:
+        - sysctl -w net.ipv4.conf.all.rp_filter=0
+        - sysctl -w net.ipv4.conf.lo.rp_filter=0
+        - sysctl -w net.ipv4.conf.eth1.rp_filter=0
+        - sysctl -w net.ipv4.conf.eth2.rp_filter=0
+        - sysctl -w net.ipv4.conf.eth3.rp_filter=0
+        - sysctl -w net.ipv4.conf.eth4.rp_filter=0
+        - sysctl -w net.mpls.conf.lo.input=1
+        - sysctl -w net.mpls.conf.eth2.input=1
+        - sysctl -w net.mpls.conf.eth3.input=1
+        - sh -ec 'ip link show dev CUST >/dev/null 2>&1 || ip link add CUST type vrf table 100'
+        - sh -ec 'ip link show dev CUST_B >/dev/null 2>&1 || ip link add CUST_B type vrf table 200'
+        - ip link set dev CUST up
+        - ip link set dev CUST_B up
+        - ip link set dev eth1 master CUST
+        - ip link set dev eth4 master CUST_B
+        - ip address replace 192.168.1.0/31 dev eth1
+        - ip address replace 192.168.11.0/31 dev eth4
+        - /usr/lib/frr/frrinit.sh start
+    pe2:
+      kind: linux
+      image: frrouting/frr:latest
+      entrypoint: /bin/sleep
+      cmd: infinity
+      binds:
+        - ./configs/pe2/daemons:/etc/frr/daemons
+        - ./configs/pe2/frr.conf:/etc/frr/frr.conf
+      sysctls:
+        net.ipv4.ip_forward: "1"
+        net.ipv4.conf.all.rp_filter: "0"
+        net.ipv4.conf.default.rp_filter: "0"
+        net.mpls.platform_labels: "1048575"
+      exec:
+        - sysctl -w net.ipv4.conf.all.rp_filter=0
+        - sysctl -w net.ipv4.conf.lo.rp_filter=0
+        - sysctl -w net.ipv4.conf.eth1.rp_filter=0
+        - sysctl -w net.ipv4.conf.eth2.rp_filter=0
+        - sysctl -w net.ipv4.conf.eth3.rp_filter=0
+        - sysctl -w net.ipv4.conf.eth4.rp_filter=0
+        - sysctl -w net.mpls.conf.lo.input=1
+        - sysctl -w net.mpls.conf.eth1.input=1
+        - sysctl -w net.mpls.conf.eth3.input=1
+        - sh -ec 'ip link show dev CUST >/dev/null 2>&1 || ip link add CUST type vrf table 100'
+        - sh -ec 'ip link show dev CUST_B >/dev/null 2>&1 || ip link add CUST_B type vrf table 200'
+        - ip link set dev CUST up
+        - ip link set dev CUST_B up
+        - ip link set dev eth2 master CUST
+        - ip link set dev eth4 master CUST_B
+        - ip address replace 192.168.2.0/31 dev eth2
+        - ip address replace 192.168.12.0/31 dev eth4
+        - /usr/lib/frr/frrinit.sh start
+    p:
+      kind: linux
+      image: frrouting/frr:latest
+      entrypoint: /bin/sleep
+      cmd: infinity
+      binds:
+        - ./configs/p/daemons:/etc/frr/daemons
+        - ./configs/p/frr.conf:/etc/frr/frr.conf
+      sysctls:
+        net.ipv4.ip_forward: "1"
+        net.ipv4.conf.all.rp_filter: "0"
+        net.ipv4.conf.default.rp_filter: "0"
+        net.mpls.platform_labels: "1048575"
+      exec:
+        - sysctl -w net.ipv4.conf.all.rp_filter=0
+        - sysctl -w net.ipv4.conf.lo.rp_filter=0
+        - sysctl -w net.ipv4.conf.eth1.rp_filter=0
+        - sysctl -w net.ipv4.conf.eth2.rp_filter=0
+        - sysctl -w net.ipv4.conf.eth3.rp_filter=0
+        - sysctl -w net.mpls.conf.lo.input=1
+        - sysctl -w net.mpls.conf.eth1.input=1
+        - sysctl -w net.mpls.conf.eth2.input=1
+        - sysctl -w net.mpls.conf.eth3.input=1
+        - /usr/lib/frr/frrinit.sh start
+    p2:
+      kind: linux
+      image: frrouting/frr:latest
+      entrypoint: /bin/sleep
+      cmd: infinity
+      binds:
+        - ./configs/p2/daemons:/etc/frr/daemons
+        - ./configs/p2/frr.conf:/etc/frr/frr.conf
+      sysctls:
+        net.ipv4.ip_forward: "1"
+        net.ipv4.conf.all.rp_filter: "0"
+        net.ipv4.conf.default.rp_filter: "0"
+        net.mpls.platform_labels: "1048575"
+      exec:
+        - sysctl -w net.ipv4.conf.all.rp_filter=0
+        - sysctl -w net.ipv4.conf.lo.rp_filter=0
+        - sysctl -w net.ipv4.conf.eth1.rp_filter=0
+        - sysctl -w net.ipv4.conf.eth2.rp_filter=0
+        - sysctl -w net.ipv4.conf.eth3.rp_filter=0
+        - sysctl -w net.mpls.conf.lo.input=1
+        - sysctl -w net.mpls.conf.eth1.input=1
+        - sysctl -w net.mpls.conf.eth2.input=1
+        - sysctl -w net.mpls.conf.eth3.input=1
+        - /usr/lib/frr/frrinit.sh start
+    ce1:
+      kind: linux
+      image: alpine:latest
+      sysctls:
+        net.ipv4.ip_forward: "1"
+        net.ipv4.conf.all.rp_filter: "0"
+        net.ipv4.conf.default.rp_filter: "0"
+      exec:
+        - sysctl -w net.ipv4.conf.eth1.rp_filter=0
+        - sysctl -w net.ipv4.conf.eth2.rp_filter=0
+        - ip address replace 192.168.1.1/31 dev eth1
+        - ip address replace 10.10.10.1/24 dev eth2
+        - ip route replace 10.20.20.0/24 via 192.168.1.0 dev eth1
+        - ip route replace 10.202.20.10/32 via 192.168.1.0 dev eth1
+    ce2:
+      kind: linux
+      image: alpine:latest
+      sysctls:
+        net.ipv4.ip_forward: "1"
+        net.ipv4.conf.all.rp_filter: "0"
+        net.ipv4.conf.default.rp_filter: "0"
+      exec:
+        - sysctl -w net.ipv4.conf.eth1.rp_filter=0
+        - sysctl -w net.ipv4.conf.eth2.rp_filter=0
+        - ip address replace 192.168.2.1/31 dev eth1
+        - ip address replace 10.20.20.1/24 dev eth2
+        - ip route replace 10.10.10.0/24 via 192.168.2.0 dev eth1
+    ce-b1:
+      kind: linux
+      image: alpine:latest
+      sysctls:
+        net.ipv4.ip_forward: "1"
+        net.ipv4.conf.all.rp_filter: "0"
+        net.ipv4.conf.default.rp_filter: "0"
+      exec:
+        - sysctl -w net.ipv4.conf.eth1.rp_filter=0
+        - sysctl -w net.ipv4.conf.eth2.rp_filter=0
+        - ip address replace 192.168.11.1/31 dev eth1
+        - ip address replace 10.10.10.1/24 dev eth2
+        - ip route replace 10.20.20.0/24 via 192.168.11.0 dev eth1
+        - ip route replace 10.202.20.10/32 via 192.168.11.0 dev eth1
+    ce-b2:
+      kind: linux
+      image: alpine:latest
+      sysctls:
+        net.ipv4.ip_forward: "1"
+        net.ipv4.conf.all.rp_filter: "0"
+        net.ipv4.conf.default.rp_filter: "0"
+      exec:
+        - sysctl -w net.ipv4.conf.eth1.rp_filter=0
+        - sysctl -w net.ipv4.conf.eth2.rp_filter=0
+        - ip address replace 192.168.12.1/31 dev eth1
+        - ip address replace 10.20.20.1/24 dev eth2
+        - ip route replace 10.10.10.0/24 via 192.168.12.0 dev eth1
+        - ip route replace 10.202.20.10/32 via 10.20.20.10 dev eth2
+    pc-a:
+      kind: linux
+      image: python:3.12-alpine
+      entrypoint: /bin/sleep
+      cmd: infinity
+      binds:
+        - ./apps/pedidos:/opt/pedidos:ro
+      exec:
+        - ip address replace 10.10.10.10/24 dev eth1
+        - ip route replace 10.20.20.0/24 via 10.10.10.1 dev eth1
+        - ip route replace 10.202.20.10/32 via 10.10.10.1 dev eth1
+    srv-a:
+      kind: linux
+      image: python:3.12-alpine
+      entrypoint: /bin/sleep
+      cmd: infinity
+      env:
+        EMPRESA: A
+      binds:
+        - ./apps/pedidos:/opt/pedidos:ro
+      exec:
+        - ip address replace 10.20.20.10/24 dev eth1
+        - ip route replace 10.10.10.0/24 via 10.20.20.1 dev eth1
+        - sh -c 'nohup python3 /opt/pedidos/server.py >/tmp/pedidos.log 2>&1 &'
+    pc-b:
+      kind: linux
+      image: python:3.12-alpine
+      entrypoint: /bin/sleep
+      cmd: infinity
+      binds:
+        - ./apps/pedidos:/opt/pedidos:ro
+      exec:
+        - ip address replace 10.10.10.10/24 dev eth1
+        - ip route replace 10.20.20.0/24 via 10.10.10.1 dev eth1
+        - ip route replace 10.202.20.10/32 via 10.10.10.1 dev eth1
+    srv-b:
+      kind: linux
+      image: python:3.12-alpine
+      entrypoint: /bin/sleep
+      cmd: infinity
+      env:
+        EMPRESA: B
+      binds:
+        - ./apps/pedidos:/opt/pedidos:ro
+      exec:
+        - ip address replace 10.20.20.10/24 dev eth1
+        - ip address replace 10.202.20.10/32 dev lo
+        - ip route replace 10.10.10.0/24 via 10.20.20.1 dev eth1
+        - sh -c 'nohup python3 /opt/pedidos/server.py >/tmp/pedidos.log 2>&1 &'
+
+  links:
+    - endpoints: ["pc-a:eth1", "ce1:eth2"]
+    - endpoints: ["ce1:eth1", "pe1:eth1"]
+    - endpoints: ["pe1:eth2", "p:eth1"]
+    - endpoints: ["pe1:eth3", "p2:eth3"]
+    - endpoints: ["p:eth3", "p2:eth1"]
+    - endpoints: ["p:eth2", "pe2:eth1"]
+    - endpoints: ["p2:eth2", "pe2:eth3"]
+    - endpoints: ["pe2:eth2", "ce2:eth1"]
+    - endpoints: ["ce2:eth2", "srv-a:eth1"]
+    - endpoints: ["pc-b:eth1", "ce-b1:eth2"]
+    - endpoints: ["ce-b1:eth1", "pe1:eth4"]
+    - endpoints: ["pe2:eth4", "ce-b2:eth1"]
+    - endpoints: ["ce-b2:eth2", "srv-b:eth1"]
